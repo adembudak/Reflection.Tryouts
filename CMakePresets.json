@@ -1,0 +1,35 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 0,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default Config",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": {
+          "$comment": "https://github.com/bloomberg/clang-p2996",
+          "type": "STRING",
+          "value": "/home/adem/p2996/bin/clang++"
+        },
+        "CMAKE_CXX_FLAGS": {
+          "type": "STRING",
+          "value": "-stdlib=libc++ -freflection-latest"
+        },
+        "CMAKE_CXX_STANDARD": {
+          "type": "STRING",
+          "value": "26"
+        },
+        "CMAKE_CXX_STANDARD_REQUIRED": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
+    }
+  ]
+}
