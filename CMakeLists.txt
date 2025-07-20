@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.0.0)
 
-project(p2996_tryouts CXX)
+project(reflection_tryouts CXX)
 
 include(CheckCXXSourceCompiles)
 
@@ -12,8 +12,7 @@ int main() {}
   RESULT)
 
 if(NOT RESULT)
-  message(FATAL_ERROR "No reflection for you")
+  message(FATAL_ERROR "No support for reflection on your compiler")
 endif()
 
-add_executable(out main.cpp)
-target_compile_features(out PRIVATE cxx_std_26)
+add_subdirectory(examples_on_proposals/P2996)
