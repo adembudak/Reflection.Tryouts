@@ -7,8 +7,7 @@
   },
   "configurePresets": [
     {
-      "name": "default",
-      "displayName": "Default Config",
+      "name": "Clang",
       "generator": "Ninja Multi-Config",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
@@ -30,6 +29,31 @@
           "value": "ON"
         }
       }
+    },
+    {
+      "name": "GCC",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": {
+          "$comment": "https://jwakely.github.io/pkg-gcc-latest/",
+          "type": "STRING",
+          "value": "/opt/gcc-latest/bin/g++"
+        },
+        "CMAKE_CXX_FLAGS": {
+          "type": "STRING",
+          "value": "-freflection"
+        },
+        "CMAKE_CXX_STANDARD": {
+          "type": "STRING",
+          "value": "26"
+        },
+        "CMAKE_CXX_STANDARD_REQUIRED": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
     }
+
   ]
 }
